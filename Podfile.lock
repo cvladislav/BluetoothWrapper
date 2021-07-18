@@ -1,0 +1,16 @@
+PODS:
+  - AsyncOperation (1.1.0)
+
+DEPENDENCIES:
+  - AsyncOperation
+
+SPEC REPOS:
+  trunk:
+    - AsyncOperation
+
+SPEC CHECKSUMS:
+  AsyncOperation: db1c082553a0f6332e0bf7d03814acdd3d59e6a7
+
+PODFILE CHECKSUM: bfc78685193bbfd87c26c8f472cffcba3f2a2e2c
+
+COCOAPODS: 1.10.1

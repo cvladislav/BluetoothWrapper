@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "BluetoothWrapper"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.3"
   spec.summary      = "Wrapper for CoreBluetooth framework."
 
   spec.description  = <<-DESC
@@ -25,5 +25,7 @@ This CocoaPods library helps you easy work with CoreBluetooth.
 
   spec.source        = { :git => "https://github.com/cvladislav/BluetoothWrapper.git", :tag => "#{spec.version}" }
   spec.source_files  = "BluetoothWrapper/**/*.{h,m,swift}"
+
+  s.dependency "AsyncOperation", "~> 1.1.0"
 
 end
