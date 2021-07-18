@@ -15,6 +15,7 @@
 		CE360A5426A42B0B000B0A88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE360A5326A42B0B000B0A88 /* ContentView.swift */; };
 		CE360A5626A42B18000B0A88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE360A5526A42B18000B0A88 /* Assets.xcassets */; };
 		CE360A5926A42B18000B0A88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE360A5826A42B18000B0A88 /* Preview Assets.xcassets */; };
+		CE360A5E26A42DAA000B0A88 /* BluetoothWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE360A5D26A42DAA000B0A88 /* BluetoothWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		CE360A5326A42B0B000B0A88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CE360A5526A42B18000B0A88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE360A5826A42B18000B0A88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CE360A5D26A42DAA000B0A88 /* BluetoothWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				CE360A3426A428C6000B0A88 /* BluetoothWrapper.h */,
+				CE360A5D26A42DAA000B0A88 /* BluetoothWrapper.swift */,
 				CE360A3526A428C6000B0A88 /* BluetoothWrapper.docc */,
 			);
 			path = BluetoothWrapper;
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE360A5E26A42DAA000B0A88 /* BluetoothWrapper.swift in Sources */,
 				CE360A3626A428C6000B0A88 /* BluetoothWrapper.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,6 +478,7 @@
 		CE360A4926A428CB000B0A88 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W98JG2S6AN;
@@ -495,6 +500,7 @@
 		CE360A4A26A428CB000B0A88 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W98JG2S6AN;
