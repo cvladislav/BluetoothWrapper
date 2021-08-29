@@ -48,7 +48,7 @@ extension ToRequestShifted {
 }
 
 extension ToRequest {
-  var toRequestBytes: String { hexString }
+  public var toRequestBytes: String { hexString }
   
   ///
   /// There is you can describe any request by variable
@@ -72,7 +72,7 @@ extension EnumConvertible where Self: RawRepresentable {
     lhs + rhs.hexString
   }
   
-  var hexString: String {
+  public var hexString: String {
     String(format:"%0\(MemoryLayout<Self.RawValue>.size * 2)X", self.rawValue as! CVarArg)
   }
 }
@@ -97,26 +97,26 @@ public protocol BLRequestProtocol: DataConvertible {
 }
 
 extension BLRequestProtocol {
-  typealias WriteCompletion = (Result<Void, BluetoothWrapper.CBWriteDataError>) -> Void
-  typealias ReadCompletion = (Result<P, BluetoothWrapper.CBReadDataError>) -> Void
+  public typealias WriteCompletion = (Result<Void, BluetoothWrapper.CBWriteDataError>) -> Void
+  public typealias ReadCompletion = (Result<P, BluetoothWrapper.CBReadDataError>) -> Void
 }
 
 public class BLBaseRequest<A: BLParsable>: BLRequestProtocol {
-  typealias P = A
+  public typealias P = A
   
-  internal let operation: BluetoothWrapper.CBOperation
-  internal let type: BluetoothWrapper.CBOperation
+  public let operation: BluetoothWrapper.CBOperation
+  public let type: BluetoothWrapper.CBOperation
   fileprivate var requestType: ToRequest! = EmptyRequest.empty
-  internal let request: ToRequest
+  public let request: ToRequest
   fileprivate let value: ToRequest?
-  internal var data: Data {
+  public var data: Data {
     (String(format: request.toRequestBytes, requestType.hexString) + (value?.hexString ?? "") ).hexadecimal!
   }
   
-  let writeCompletion: WriteCompletion?
-  let readCompletion: ReadCompletion?
+  public let writeCompletion: WriteCompletion?
+  public let readCompletion: ReadCompletion?
   
-  required init(operation: BluetoothWrapper.CBOperation,
+  public required init(operation: BluetoothWrapper.CBOperation,
        type: BluetoothWrapper.CBOperation? = nil,
        request: ToRequest,
        value: ToRequest? = nil,

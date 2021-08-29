@@ -2,12 +2,12 @@ import CoreBluetooth
 import AsyncOperation
 
 public class BluetoothWrapper: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
-  typealias ConnectionCompletion = (Result<CBConnection, CBError>) -> Void
-  typealias ScanCompletion = (PeripheralScanResult) -> CBScan
-  typealias ReadDataCompletion = (Result<Data, CBReadDataError>) -> Void
-  typealias WriteDataCompletion = (Result<Void, CBWriteDataError>) -> Void
-  typealias OperationCompletion = () -> Void
-  typealias Log = (String) -> Void
+  public typealias ConnectionCompletion = (Result<CBConnection, CBError>) -> Void
+  public typealias ScanCompletion = (PeripheralScanResult) -> CBScan
+  public typealias ReadDataCompletion = (Result<Data, CBReadDataError>) -> Void
+  public typealias WriteDataCompletion = (Result<Void, CBWriteDataError>) -> Void
+  public typealias OperationCompletion = () -> Void
+  public typealias Log = (String) -> Void
   
   private let queue = DispatchQueue(label: "\(BluetoothWrapper.self)", qos: .background)
   private let operations: OperationQueue = OperationQueue()
@@ -156,14 +156,14 @@ public class BluetoothWrapper: NSObject, CBCentralManagerDelegate, CBPeripheralD
   
   // MARK: - Delegate
   
-  func centralManagerDidUpdateState(_ central: CBCentralManager) {
+  public func centralManagerDidUpdateState(_ central: CBCentralManager) {
     switch asyncState(central.state) {
     case .scan: scan(force: true)
     case .nothing: break
     }
   }
   
-  func centralManager(_ central: CBCentralManager,
+  public func centralManager(_ central: CBCentralManager,
                       didDiscover peripheral: CBPeripheral,
                       advertisementData: [String : Any],
                       rssi RSSI: NSNumber) {
@@ -180,14 +180,14 @@ public class BluetoothWrapper: NSObject, CBCentralManagerDelegate, CBPeripheralD
   
   // MARK: - Connection
   
-  func centralManager(_ central: CBCentralManager,
+  public func centralManager(_ central: CBCentralManager,
                       didConnect peripheral: CBPeripheral) {
     if let peripheral = retrievePeripheral(by: Peripheral(peripheral)) {
       peripheral.discoverServices()
     }
   }
   
-  func centralManager(_ central: CBCentralManager,
+  public func centralManager(_ central: CBCentralManager,
                       didFailToConnect peripheral: CBPeripheral,
                       error: Error?) {
     if let peripheral = retrievePeripheral(by: Peripheral(peripheral)) {
@@ -195,7 +195,7 @@ public class BluetoothWrapper: NSObject, CBCentralManagerDelegate, CBPeripheralD
     }
   }
   
-  func centralManager(_ central: CBCentralManager,
+  public func centralManager(_ central: CBCentralManager,
                       didDisconnectPeripheral peripheral: CBPeripheral,
                       error: Error?) {
     if let peripheral = retrievePeripheral(by: Peripheral(peripheral)) {
@@ -203,7 +203,7 @@ public class BluetoothWrapper: NSObject, CBCentralManagerDelegate, CBPeripheralD
     }
   }
   
-  func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+  public func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
     let peripheral = retrievePeripheral(by: Peripheral(peripheral))
     
     if error == nil {
@@ -213,7 +213,7 @@ public class BluetoothWrapper: NSObject, CBCentralManagerDelegate, CBPeripheralD
     }
   }
   
-  func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
+  public func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
     log?("[ProxyBluetooth] Discover characteristics for \(service) peripheral:\(peripheral)")
     
     let peripheral = retrievePeripheral(by: Peripheral(peripheral))
@@ -226,7 +226,7 @@ public class BluetoothWrapper: NSObject, CBCentralManagerDelegate, CBPeripheralD
   
   // MARK: - Communication
   
-  func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
+  public func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
     log?("[ProxyBluetooth] Value write...")
     if let errorMessage = error?.localizedDescription {
       log?("[ProxyBluetooth] Error - \(errorMessage)")
@@ -241,7 +241,7 @@ public class BluetoothWrapper: NSObject, CBCentralManagerDelegate, CBPeripheralD
     }
   }
   
-  func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
+  public func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
     log?("[ProxyBluetooth] Value read - \(String(describing: characteristic.value?.bytes))")
     if let errorMessage = error?.localizedDescription {
       log?("[ProxyBluetooth] Error - \(errorMessage)")

@@ -24,7 +24,7 @@ This CocoaPods library helps you easy work with CoreBluetooth.
   spec.swift_version = "5.0"
 
   spec.source        = { :git => "https://github.com/cvladislav/BluetoothWrapper.git", :tag => "#{spec.version}" }
-  spec.source_files  = "BluetoothWrapper/**/*.{h,m,swift}"
+  spec.source_files  = "Sources/BluetoothWrapper/**/*.{h,m,swift}"
 
   spec.dependency "AsyncOperation", "~> 1.1.0"
 

@@ -5,11 +5,11 @@ public protocol BluetoothIdentifiable {
 }
 
 extension Peripheral {
-  override var hash: Int {
+  public override var hash: Int {
     return id.hash
   }
   
-  override func isEqual(_ object: Any?) -> Bool {
+  public override func isEqual(_ object: Any?) -> Bool {
     if let obj = object as? Self {
       return obj.id == id
     }
