@@ -20,11 +20,8 @@
 		CE360A3C26A428CA000B0A88 /* BluetoothWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE360A3126A428C6000B0A88 /* BluetoothWrapper.framework */; };
 		CE360A4126A428CB000B0A88 /* BluetoothWrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE360A4026A428CB000B0A88 /* BluetoothWrapperTests.swift */; };
 		CE360A4226A428CB000B0A88 /* BluetoothWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CE360A3426A428C6000B0A88 /* BluetoothWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CE360A5226A42B0B000B0A88 /* BluetoothWrapperExamplesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE360A5126A42B0B000B0A88 /* BluetoothWrapperExamplesApp.swift */; };
-		CE360A5426A42B0B000B0A88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE360A5326A42B0B000B0A88 /* ContentView.swift */; };
-		CE360A5626A42B18000B0A88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE360A5526A42B18000B0A88 /* Assets.xcassets */; };
-		CE360A5926A42B18000B0A88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE360A5826A42B18000B0A88 /* Preview Assets.xcassets */; };
 		CE360A5E26A42DAA000B0A88 /* BluetoothWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE360A5D26A42DAA000B0A88 /* BluetoothWrapper.swift */; };
+		CE5FB9CB26DBA57A00DD9B6F /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5FB9CA26DBA57A00DD9B6F /* Package.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +38,6 @@
 		3B9222CB4EF6526F741E808C /* Pods_BluetoothWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BluetoothWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A236BBE34DD80D572F2AA8F5 /* Pods-BluetoothWrapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluetoothWrapper.debug.xcconfig"; path = "Target Support Files/Pods-BluetoothWrapper/Pods-BluetoothWrapper.debug.xcconfig"; sourceTree = "<group>"; };
 		C33186A36D285AA941E90530 /* Pods-BluetoothWrapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluetoothWrapper.release.xcconfig"; path = "Target Support Files/Pods-BluetoothWrapper/Pods-BluetoothWrapper.release.xcconfig"; sourceTree = "<group>"; };
-		CE2CA18926A43E3500A38194 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CE2CA19426A43FEE00A38194 /* Peripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peripheral.swift; sourceTree = "<group>"; };
 		CE2CA19626A4404700A38194 /* BLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLRequest.swift; sourceTree = "<group>"; };
 		CE2CA19826A4411C00A38194 /* BLParsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLParsable.swift; sourceTree = "<group>"; };
@@ -55,12 +51,9 @@
 		CE360A3526A428C6000B0A88 /* BluetoothWrapper.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = BluetoothWrapper.docc; sourceTree = "<group>"; };
 		CE360A3B26A428CA000B0A88 /* BluetoothWrapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BluetoothWrapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE360A4026A428CB000B0A88 /* BluetoothWrapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothWrapperTests.swift; sourceTree = "<group>"; };
-		CE360A4F26A42B0B000B0A88 /* BluetoothWrapperExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BluetoothWrapperExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE360A5126A42B0B000B0A88 /* BluetoothWrapperExamplesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothWrapperExamplesApp.swift; sourceTree = "<group>"; };
-		CE360A5326A42B0B000B0A88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		CE360A5526A42B18000B0A88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CE360A5826A42B18000B0A88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE360A5D26A42DAA000B0A88 /* BluetoothWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothWrapper.swift; sourceTree = "<group>"; };
+		CE5FB9C926DBA45600DD9B6F /* BluetoothWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BluetoothWrapper.h; sourceTree = "<group>"; };
+		CE5FB9CA26DBA57A00DD9B6F /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,13 +70,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE360A3C26A428CA000B0A88 /* BluetoothWrapper.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CE360A4C26A42B0B000B0A88 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,9 +108,10 @@
 		CE360A2726A428C6000B0A88 = {
 			isa = PBXGroup;
 			children = (
-				CE360A3326A428C6000B0A88 /* BluetoothWrapper */,
-				CE360A3F26A428CA000B0A88 /* BluetoothWrapperTests */,
-				CE360A5026A42B0B000B0A88 /* BluetoothWrapperExamples */,
+				CE5FB9CA26DBA57A00DD9B6F /* Package.swift */,
+				CE5FB9C826DBA43600DD9B6F /* Umbrella */,
+				CE360A3326A428C6000B0A88 /* Sources */,
+				CE360A3F26A428CA000B0A88 /* Tests */,
 				CE360A3226A428C6000B0A88 /* Products */,
 				F3F79D2F9B5800193DA81BED /* Pods */,
 				F1E02ED06DE27B1D900D4780 /* Frameworks */,
@@ -136,12 +123,35 @@
 			children = (
 				CE360A3126A428C6000B0A88 /* BluetoothWrapper.framework */,
 				CE360A3B26A428CA000B0A88 /* BluetoothWrapperTests.xctest */,
-				CE360A4F26A42B0B000B0A88 /* BluetoothWrapperExamples.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CE360A3326A428C6000B0A88 /* BluetoothWrapper */ = {
+		CE360A3326A428C6000B0A88 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				CE5FB9CC26DBA74400DD9B6F /* BluetoothWrapper */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		CE360A3F26A428CA000B0A88 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CE5FB9CD26DBA75E00DD9B6F /* BluetoothWrapperTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		CE5FB9C826DBA43600DD9B6F /* Umbrella */ = {
+			isa = PBXGroup;
+			children = (
+				CE5FB9C926DBA45600DD9B6F /* BluetoothWrapper.h */,
+			);
+			path = Umbrella;
+			sourceTree = "<group>";
+		};
+		CE5FB9CC26DBA74400DD9B6F /* BluetoothWrapper */ = {
 			isa = PBXGroup;
 			children = (
 				CE2CA19E26A4424100A38194 /* Extensions */,
@@ -154,32 +164,12 @@
 			path = BluetoothWrapper;
 			sourceTree = "<group>";
 		};
-		CE360A3F26A428CA000B0A88 /* BluetoothWrapperTests */ = {
+		CE5FB9CD26DBA75E00DD9B6F /* BluetoothWrapperTests */ = {
 			isa = PBXGroup;
 			children = (
 				CE360A4026A428CB000B0A88 /* BluetoothWrapperTests.swift */,
 			);
 			path = BluetoothWrapperTests;
-			sourceTree = "<group>";
-		};
-		CE360A5026A42B0B000B0A88 /* BluetoothWrapperExamples */ = {
-			isa = PBXGroup;
-			children = (
-				CE2CA18926A43E3500A38194 /* Info.plist */,
-				CE360A5126A42B0B000B0A88 /* BluetoothWrapperExamplesApp.swift */,
-				CE360A5326A42B0B000B0A88 /* ContentView.swift */,
-				CE360A5526A42B18000B0A88 /* Assets.xcassets */,
-				CE360A5726A42B18000B0A88 /* Preview Content */,
-			);
-			path = BluetoothWrapperExamples;
-			sourceTree = "<group>";
-		};
-		CE360A5726A42B18000B0A88 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				CE360A5826A42B18000B0A88 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		F1E02ED06DE27B1D900D4780 /* Frameworks */ = {
@@ -250,23 +240,6 @@
 			productReference = CE360A3B26A428CA000B0A88 /* BluetoothWrapperTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		CE360A4E26A42B0B000B0A88 /* BluetoothWrapperExamples */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CE360A5A26A42B18000B0A88 /* Build configuration list for PBXNativeTarget "BluetoothWrapperExamples" */;
-			buildPhases = (
-				CE360A4B26A42B0B000B0A88 /* Sources */,
-				CE360A4C26A42B0B000B0A88 /* Frameworks */,
-				CE360A4D26A42B0B000B0A88 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = BluetoothWrapperExamples;
-			productName = BluetoothWrapperExamples;
-			productReference = CE360A4F26A42B0B000B0A88 /* BluetoothWrapperExamples.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -281,9 +254,6 @@
 						CreatedOnToolsVersion = 13.0;
 					};
 					CE360A3A26A428CA000B0A88 = {
-						CreatedOnToolsVersion = 13.0;
-					};
-					CE360A4E26A42B0B000B0A88 = {
 						CreatedOnToolsVersion = 13.0;
 					};
 				};
@@ -303,7 +273,6 @@
 			targets = (
 				CE360A3026A428C6000B0A88 /* BluetoothWrapper */,
 				CE360A3A26A428CA000B0A88 /* BluetoothWrapperTests */,
-				CE360A4E26A42B0B000B0A88 /* BluetoothWrapperExamples */,
 			);
 		};
 /* End PBXProject section */
@@ -320,15 +289,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CE360A4D26A42B0B000B0A88 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CE360A5926A42B18000B0A88 /* Preview Assets.xcassets in Resources */,
-				CE360A5626A42B18000B0A88 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +333,7 @@
 				CE360A5E26A42DAA000B0A88 /* BluetoothWrapper.swift in Sources */,
 				CE360A3626A428C6000B0A88 /* BluetoothWrapper.docc in Sources */,
 				CE2CA1A426A447E000A38194 /* BLOperationStrategy.swift in Sources */,
+				CE5FB9CB26DBA57A00DD9B6F /* Package.swift in Sources */,
 				CE2CA1A226A4432800A38194 /* BLOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,15 +343,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE360A4126A428CB000B0A88 /* BluetoothWrapperTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CE360A4B26A42B0B000B0A88 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CE360A5426A42B0B000B0A88 /* ContentView.swift in Sources */,
-				CE360A5226A42B0B000B0A88 /* BluetoothWrapperExamplesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,7 +501,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.4;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ciklum.BluetoothWrapper;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = "";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -586,7 +538,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.4;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ciklum.BluetoothWrapper;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = "";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -653,78 +605,6 @@
 			};
 			name = Release;
 		};
-		CE360A5B26A42B18000B0A88 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BluetoothWrapperExamples/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BluetoothWrapperExamples/Info.plist;
-				INFOPLIST_KEY_CFBundleExecutable = BluetoothWrapperExamples;
-				INFOPLIST_KEY_CFBundleName = BluetoothWrapperExamples;
-				INFOPLIST_KEY_CFBundleVersion = 1;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 0.0.4;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Ciklum.BluetoothWrapperExamples;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TVOS_DEPLOYMENT_TARGET = 14.1;
-			};
-			name = Debug;
-		};
-		CE360A5C26A42B18000B0A88 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BluetoothWrapperExamples/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BluetoothWrapperExamples/Info.plist;
-				INFOPLIST_KEY_CFBundleExecutable = BluetoothWrapperExamples;
-				INFOPLIST_KEY_CFBundleName = BluetoothWrapperExamples;
-				INFOPLIST_KEY_CFBundleVersion = 1;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 0.0.4;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Ciklum.BluetoothWrapperExamples;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TVOS_DEPLOYMENT_TARGET = 14.1;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -751,15 +631,6 @@
 			buildConfigurations = (
 				CE360A4926A428CB000B0A88 /* Debug */,
 				CE360A4A26A428CB000B0A88 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CE360A5A26A42B18000B0A88 /* Build configuration list for PBXNativeTarget "BluetoothWrapperExamples" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CE360A5B26A42B18000B0A88 /* Debug */,
-				CE360A5C26A42B18000B0A88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

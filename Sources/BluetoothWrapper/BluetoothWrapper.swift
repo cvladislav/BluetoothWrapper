@@ -135,7 +135,7 @@ class BluetoothWrapper: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
   
   @discardableResult
   private func getOperation<T: BLRequestProtocol>(for device: BluetoothIdentifiable, _ request: T) -> AsyncOperation {
-    return strategy.match(request: request)
+    return strategy.match(manager: self, peripheral: device, request: request, queue: queue)
   }
   
   func readData(by identifiable: BluetoothIdentifiable) {
