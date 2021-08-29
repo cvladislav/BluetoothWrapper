@@ -48,7 +48,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '14.1'
 use_frameworks!
 
-pod 'BluetoothWrapper', '~> 0.0.4'
+pod 'BluetoothWrapper', '~> 0.1.0'
 ```
 
 Then, run the following command:
