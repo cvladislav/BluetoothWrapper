@@ -1,3 +1,3 @@
-enum EmptyRequest: UInt8, ToRequest {
+public enum EmptyRequest: UInt8, ToRequest {
   case empty
 }

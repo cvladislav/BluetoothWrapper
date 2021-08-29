@@ -1,17 +1,16 @@
-//
-//  ContentView.swift
-//  BWExample
-//
-//  Created by User on 29.08.2021.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+  let model: ContentViewModel = ContentViewModel()
+  
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+      List {
+        ForEach(model.devices, id: \.self) {
+          Text($0)
+        }
+      }
     }
+
 }
 
 struct ContentView_Previews: PreviewProvider {

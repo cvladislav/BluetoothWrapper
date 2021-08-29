@@ -11,7 +11,51 @@
 		CE5FB9AB26DBA15500DD9B6F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5FB9AA26DBA15500DD9B6F /* ContentView.swift */; };
 		CE5FB9AD26DBA15600DD9B6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5FB9AC26DBA15600DD9B6F /* Assets.xcassets */; };
 		CE5FB9B026DBA15600DD9B6F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5FB9AF26DBA15600DD9B6F /* Preview Assets.xcassets */; };
+		CE61A2A426DBAB4A00D9CC1C /* BluetoothWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5FB9ED26DBAAB700DD9B6F /* BluetoothWrapper.framework */; platformFilter = ios; };
+		CE61A2A526DBAB4A00D9CC1C /* BluetoothWrapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE5FB9ED26DBAAB700DD9B6F /* BluetoothWrapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE61A2AB26DBAB7600D9CC1C /* Bluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61A2AA26DBAB7600D9CC1C /* Bluetooth.swift */; };
+		CE61A2AE26DBAC2900D9CC1C /* BluetoothDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61A2AD26DBAC2900D9CC1C /* BluetoothDevice.swift */; };
+		CE61A2B226DBAFC900D9CC1C /* BluetoothStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61A2B126DBAFC900D9CC1C /* BluetoothStrategy.swift */; };
+		CE61A2B426DBB23200D9CC1C /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61A2B326DBB23200D9CC1C /* ContentViewModel.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE5FB9EC26DBAAB700DD9B6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE5FB9E726DBAAB700DD9B6F /* BluetoothWrapper.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CE360A3126A428C6000B0A88;
+			remoteInfo = BluetoothWrapper;
+		};
+		CE5FB9EE26DBAAB700DD9B6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE5FB9E726DBAAB700DD9B6F /* BluetoothWrapper.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CE360A3B26A428CA000B0A88;
+			remoteInfo = BluetoothWrapperTests;
+		};
+		CE61A2A726DBAB5700D9CC1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE5FB9E726DBAAB700DD9B6F /* BluetoothWrapper.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = CE360A3026A428C6000B0A88;
+			remoteInfo = BluetoothWrapper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CE61A2A626DBAB4A00D9CC1C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CE61A2A526DBAB4A00D9CC1C /* BluetoothWrapper.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CE5FB9A526DBA15500DD9B6F /* BWExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BWExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -19,6 +63,11 @@
 		CE5FB9AA26DBA15500DD9B6F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CE5FB9AC26DBA15600DD9B6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE5FB9AF26DBA15600DD9B6F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CE5FB9E726DBAAB700DD9B6F /* BluetoothWrapper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BluetoothWrapper.xcodeproj; path = ../../BluetoothWrapper.xcodeproj; sourceTree = "<group>"; };
+		CE61A2AA26DBAB7600D9CC1C /* Bluetooth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bluetooth.swift; sourceTree = "<group>"; };
+		CE61A2AD26DBAC2900D9CC1C /* BluetoothDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothDevice.swift; sourceTree = "<group>"; };
+		CE61A2B126DBAFC900D9CC1C /* BluetoothStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothStrategy.swift; sourceTree = "<group>"; };
+		CE61A2B326DBB23200D9CC1C /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE61A2A426DBAB4A00D9CC1C /* BluetoothWrapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +102,10 @@
 		CE5FB9A726DBA15500DD9B6F /* BWExample */ = {
 			isa = PBXGroup;
 			children = (
+				CE61A2A926DBAB6300D9CC1C /* Services */,
 				CE5FB9A826DBA15500DD9B6F /* BWExampleApp.swift */,
 				CE5FB9AA26DBA15500DD9B6F /* ContentView.swift */,
+				CE61A2B326DBB23200D9CC1C /* ContentViewModel.swift */,
 				CE5FB9AC26DBA15600DD9B6F /* Assets.xcassets */,
 				CE5FB9AE26DBA15600DD9B6F /* Preview Content */,
 			);
@@ -71,8 +123,28 @@
 		CE5FB9B726DBA1DA00DD9B6F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE5FB9E726DBAAB700DD9B6F /* BluetoothWrapper.xcodeproj */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE5FB9E826DBAAB700DD9B6F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE5FB9ED26DBAAB700DD9B6F /* BluetoothWrapper.framework */,
+				CE5FB9EF26DBAAB700DD9B6F /* BluetoothWrapperTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE61A2A926DBAB6300D9CC1C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CE61A2AA26DBAB7600D9CC1C /* Bluetooth.swift */,
+				CE61A2AD26DBAC2900D9CC1C /* BluetoothDevice.swift */,
+				CE61A2B126DBAFC900D9CC1C /* BluetoothStrategy.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,10 +157,12 @@
 				CE5FB9A126DBA15500DD9B6F /* Sources */,
 				CE5FB9A226DBA15500DD9B6F /* Frameworks */,
 				CE5FB9A326DBA15500DD9B6F /* Resources */,
+				CE61A2A626DBAB4A00D9CC1C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CE61A2A826DBAB5700D9CC1C /* PBXTargetDependency */,
 			);
 			name = BWExample;
 			productName = BWExample;
@@ -121,12 +195,35 @@
 			mainGroup = CE5FB99C26DBA15500DD9B6F;
 			productRefGroup = CE5FB9A626DBA15500DD9B6F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CE5FB9E826DBAAB700DD9B6F /* Products */;
+					ProjectRef = CE5FB9E726DBAAB700DD9B6F /* BluetoothWrapper.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				CE5FB9A426DBA15500DD9B6F /* BWExample */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CE5FB9ED26DBAAB700DD9B6F /* BluetoothWrapper.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BluetoothWrapper.framework;
+			remoteRef = CE5FB9EC26DBAAB700DD9B6F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CE5FB9EF26DBAAB700DD9B6F /* BluetoothWrapperTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BluetoothWrapperTests.xctest;
+			remoteRef = CE5FB9EE26DBAAB700DD9B6F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CE5FB9A326DBA15500DD9B6F /* Resources */ = {
@@ -146,11 +243,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE5FB9AB26DBA15500DD9B6F /* ContentView.swift in Sources */,
+				CE61A2AB26DBAB7600D9CC1C /* Bluetooth.swift in Sources */,
+				CE61A2B426DBB23200D9CC1C /* ContentViewModel.swift in Sources */,
+				CE61A2AE26DBAC2900D9CC1C /* BluetoothDevice.swift in Sources */,
+				CE61A2B226DBAFC900D9CC1C /* BluetoothStrategy.swift in Sources */,
 				CE5FB9A926DBA15500DD9B6F /* BWExampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE61A2A826DBAB5700D9CC1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BluetoothWrapper;
+			targetProxy = CE61A2A726DBAB5700D9CC1C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		CE5FB9B126DBA15600DD9B6F /* Debug */ = {
@@ -274,9 +383,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BWExample/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -284,7 +394,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -292,6 +402,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ciklum.BWExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -303,9 +414,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BWExample/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -313,7 +425,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -321,6 +433,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ciklum.BWExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

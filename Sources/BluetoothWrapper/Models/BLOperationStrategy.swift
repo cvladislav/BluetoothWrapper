@@ -1,6 +1,6 @@
 import AsyncOperation
 
-protocol BLOperationStrategy {
+public protocol BLOperationStrategy {
   func match<T>(manager: BluetoothWrapper,
                 peripheral: BluetoothIdentifiable,
                 request: T,

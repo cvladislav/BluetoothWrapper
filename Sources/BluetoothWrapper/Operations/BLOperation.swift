@@ -1,7 +1,7 @@
 import Foundation
 import AsyncOperation
 
-class BLOperation<T: BLRequestProtocol, P: BLParserProtocol>: AsyncOperation {
+public class BLOperation<T: BLRequestProtocol, P: BLParserProtocol>: AsyncOperation {
   private weak var manager: BluetoothWrapper?
   private let device: BluetoothIdentifiable
   private let request: T

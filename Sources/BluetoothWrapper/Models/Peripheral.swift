@@ -1,6 +1,6 @@
 import CoreBluetooth
 
-protocol BluetoothIdentifiable {
+public protocol BluetoothIdentifiable {
   var id: String { get }
 }
 
@@ -39,12 +39,17 @@ protocol PeripheralProtocol: BluetoothIdentifiable, CBPeripheralDelegate {
   func write(data: Data)
 }
 
-struct PeripheralSettings {
+public struct PeripheralSettings {
   let characteristicUUID: CBUUID?
   let serviceUUID: CBUUID?
+  
+  public init(characteristicUUID: CBUUID?, serviceUUID: CBUUID?) {
+    self.characteristicUUID = characteristicUUID
+    self.serviceUUID = serviceUUID
+  }
 }
 
-class Peripheral: NSObject, PeripheralProtocol {
+public class Peripheral: NSObject, PeripheralProtocol {
   private let peripheral: CBPeripheral
   private var settings: PeripheralSettings!
   private var characteristic: CBCharacteristic?
@@ -52,15 +57,15 @@ class Peripheral: NSObject, PeripheralProtocol {
   
   var completion: BluetoothWrapper.ConnectionCompletion?
   
-  var id: String {
+  public var id: String {
     peripheral.identifier.uuidString
   }
   
-  var name: String? {
+  public var name: String? {
     peripheral.name
   }
   
-  var state: CBPeripheralState {
+  public var state: CBPeripheralState {
     peripheral.state
   }
   

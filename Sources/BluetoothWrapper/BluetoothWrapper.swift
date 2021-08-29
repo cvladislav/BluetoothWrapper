@@ -1,7 +1,7 @@
 import CoreBluetooth
 import AsyncOperation
 
-class BluetoothWrapper: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
+public class BluetoothWrapper: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
   typealias ConnectionCompletion = (Result<CBConnection, CBError>) -> Void
   typealias ScanCompletion = (PeripheralScanResult) -> CBScan
   typealias ReadDataCompletion = (Result<Data, CBReadDataError>) -> Void
@@ -77,7 +77,7 @@ class BluetoothWrapper: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
   private var log: Log?
   private var lastUUIDs: [CBUUID]?
 
-  init(asyncState: @escaping (CBManagerState) -> CBAction,
+  public init(asyncState: @escaping (CBManagerState) -> CBAction,
        scanCompletion: @escaping ScanCompletion,
        strategy: BLOperationStrategy,
        log: Log? = nil
@@ -96,7 +96,7 @@ class BluetoothWrapper: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     operations.maxConcurrentOperationCount = 1
   }
   
-  func scan(withServices serviceUUIDs: [CBUUID]? = nil,
+  public func scan(withServices serviceUUIDs: [CBUUID]? = nil,
             options: [String : Any]? = nil,
             force: Bool = true,
             for lastUUIDs: Bool = false) {
@@ -109,14 +109,14 @@ class BluetoothWrapper: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     manager.scanForPeripherals(withServices: lastUUIDs ? self.lastUUIDs : serviceUUIDs, options: options)
   }
   
-  func connect(peripheral: BluetoothIdentifiable, settings: PeripheralSettings, completion: @escaping ConnectionCompletion) {
+  public func connect(peripheral: BluetoothIdentifiable, settings: PeripheralSettings, completion: @escaping ConnectionCompletion) {
     if let peripheral = retrievePeripheral(by: peripheral) {
       peripheral.connect(with: manager, with: settings)
       peripheral.completion = completion
     }
   }
   
-  func disconnect(peripheral: BluetoothIdentifiable) {
+  public func disconnect(peripheral: BluetoothIdentifiable) {
     operations.cancelAllOperations()
     
     if let peripheral = retrievePeripheral(by: peripheral) {
@@ -124,7 +124,7 @@ class BluetoothWrapper: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     }
   }
   
-  func `do`<T: BLRequestProtocol>(for device: BluetoothIdentifiable,
+  public func `do`<T: BLRequestProtocol>(for device: BluetoothIdentifiable,
                                   request: T, force: Bool = false) {
     let operation = getOperation(for: device, request)
     if force {

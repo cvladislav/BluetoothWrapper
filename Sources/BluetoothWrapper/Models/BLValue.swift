@@ -1,10 +1,10 @@
 import Foundation
 
-protocol EnumValueConvertible {
+public protocol EnumValueConvertible {
   var value: EnumValue { get }
 }
 
-struct EnumValue {
+public struct EnumValue {
   let bytes: String
   
   init(_ value: Data) {

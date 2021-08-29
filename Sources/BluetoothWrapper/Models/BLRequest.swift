@@ -1,14 +1,14 @@
 import Foundation
 
-protocol DataConvertible {
+public protocol DataConvertible {
   var data: Data { get }
 }
 
-protocol ToRequest: EnumConvertible {
+public protocol ToRequest: EnumConvertible {
   var toRequestBytes: String { get }
 }
 
-protocol ToRequestShifted: ToRequest {
+public protocol ToRequestShifted: ToRequest {
   associatedtype T: (RawRepresentable & CaseIterable) where T.RawValue: UnsignedInteger
   
   var request: T { get }
@@ -59,7 +59,7 @@ extension ToRequest {
   ///
 }
   
-protocol EnumConvertible {
+public protocol EnumConvertible {
   var hexString: String { get }
 }
 
@@ -77,7 +77,7 @@ extension EnumConvertible where Self: RawRepresentable {
   }
 }
 
-protocol BLRequestProtocol: DataConvertible {
+public protocol BLRequestProtocol: DataConvertible {
   associatedtype P: BLParsable
   
   var operation: BluetoothWrapper.CBOperation { get }
@@ -101,7 +101,7 @@ extension BLRequestProtocol {
   typealias ReadCompletion = (Result<P, BluetoothWrapper.CBReadDataError>) -> Void
 }
 
-class BLBaseRequest<A: BLParsable>: BLRequestProtocol {
+public class BLBaseRequest<A: BLParsable>: BLRequestProtocol {
   typealias P = A
   
   internal let operation: BluetoothWrapper.CBOperation

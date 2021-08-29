@@ -1,11 +1,11 @@
 import Foundation
 
-protocol BLParsable {
+public protocol BLParsable {
   associatedtype P: ToRequest
   
   init(data: Data, request: P?)
 }
 
-protocol BLParserProtocol {
+public protocol BLParserProtocol {
   static func parse<T: BLParsable>(from data: Data, request: T.P?) throws -> T
 }
