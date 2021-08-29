@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "BluetoothWrapper"
-  spec.version      = "0.0.4"
+  spec.version      = "0.2.0"
   spec.summary      = "Wrapper for CoreBluetooth framework."
 
   spec.description  = <<-DESC
