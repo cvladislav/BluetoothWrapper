@@ -1,0 +1,6 @@
+coverage_service: cobertura_xml
+xcodeproj: BluetoothWrapper.xcodeproj
+scheme: BluetoothWrapper
+output_directory: reports
+ignore:
+  - BluetoothWrapperTests/*
