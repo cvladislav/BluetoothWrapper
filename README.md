@@ -27,7 +27,7 @@ BluetoothWrapper tries to address the challenges this may cause by providing a m
 - Start broadcasting with only a single function call.
 
 ## Requirements
-- iOS 14.0+
+- iOS 14.1+
 - Xcode 14.0+
 
 ## Installation
@@ -48,7 +48,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '14.1'
 use_frameworks!
 
-pod 'BluetoothWrapper', '~> 0.1.0'
+pod 'BluetoothWrapper', '~> 0.2.0'
 ```
 
 Then, run the following command:
@@ -70,72 +70,78 @@ import BluetoothWrapper
 
 Prepare and start a BluetoothIdentifiable object. You can use it for connect to existing bluetooth device id == UUID device.
 ```swift
-func connect(peripheral: BluetoothIdentifiable) -> AnyPublisher<ProxyCentralManager.CBConnection,
-                                                              ProxyCentralManager.CBError> {
-connectionState = .init(.connecting)
-
-self.proxyManager.connect(peripheral: peripheral) { [weak self] result in
-  switch result {
-  case let .success(connection):
-    self?.connectionState.send(connection)
+  func connect(peripheral: BluetoothIdentifiable) -> AnyPublisher<BluetoothWrapper.CBConnection,
+                                                                  BluetoothWrapper.CBError> {
+    connectionState = .init(.connecting)
+    self.proxyManager.connect(peripheral: peripheral,
+                              settings: PeripheralSettings(characteristicUUID: nil,
+                                                           serviceUUID: nil)) { [weak self] result in
+      switch result {
+      case let .success(connection):
+        self?.connectionState.send(connection)
+      case let .failure(error):
+        self?.connectionState.send(completion: .failure(error))
+      }
+    }
     
-    Log.log("Connection - \(connection)")
-  case let .failure(error):
-    self?.connectionState.send(completion: .failure(error))
-    
-    Log.log("Connection error - \(error)")
+    return connectionState.eraseToAnyPublisher()
   }
-}
-
-return connectionState.eraseToAnyPublisher()
-}
 ```
 
 Send or read data can be dne with generic functions. Use force to set priority for request. Also you can simply modify your request if needed
 ```swift
-func readData<T: BLRequestProtocol>(for peripheral: BluetoothIdentifiable, request: T, force: Bool = false) {
-let request = T.init(operation: .write,
-                     type: .read,
-                     request: request.request,
-                     value: nil,
-                     writeCompletion: request.writeCompletion,
-                     readCompletion: request.readCompletion)
-proxyManager.do(for: peripheral, request: request, force: force)
-}
+  func readData<T: BLRequestProtocol>(for peripheral: BluetoothIdentifiable, request: T, force: Bool = false) {
+    guard connectionState.value == .connected else {
+      return
+    }
 
-func writeData<T: BLRequestProtocol>(for peripheral: BluetoothIdentifiable, request: T, force: Bool = false) {
-proxyManager.do(for: peripheral, request: request, force: force)
+    let request = T.init(operation: .write,
+                         type: .read,
+                         request: request.request,
+                         value: nil,
+                         writeCompletion: request.writeCompletion,
+                         readCompletion: request.readCompletion)
+    proxyManager.do(for: peripheral, request: request, force: force)
+  }
+  
+  func writeData<T: BLRequestProtocol>(for peripheral: BluetoothIdentifiable, request: T, force: Bool = false) {
+    guard connectionState.value == .connected else {
+      return
+    }
+
+    proxyManager.do(for: peripheral, request: request, force: force)
+  }
 }
 ```
 
 #### Central
 Prepare and start a ProxyCentralManager. There is you can setup actions on any events.
 ```swift
-proxyManager = ProxyCentralManager(asyncState: { [weak self, proxyManager] (state) -> ProxyCentralManager.CBAction in
-  if let isAuthorized = proxyManager?.isAuthorised {
-    self?.isAuthorisedPublisher = isAuthorized
-  }
-  
-  switch state {
-  case .poweredOn:
-    return .scan
-  case .unauthorized:
-    return .nothing
-  default:
-    return .nothing
-  }
-}, scanCompletion: { [weak self] (result) in
-  switch result {
-  case .scanResult(let peripheral, let data, let rsii):
-    if let _ = self?.handle(uuid: peripheral.id,
-                            name: peripheral.name,
-                            data: data,
-                            rssi: rsii) {
-      return .add
-    }
-    return .skip
-  }
-})
+    proxyManager = BluetoothWrapper(asyncState: { [weak self, proxyManager] (state) -> BluetoothWrapper.CBAction in
+      if let isAuthorized = proxyManager?.isAuthorised {
+        self?.isAuthorisedPublisher = isAuthorized
+      }
+      
+      switch state {
+      case .poweredOn:
+        return .scan
+      case .unauthorized:
+        return .nothing
+      default:
+        return .nothing
+      }
+    }, scanCompletion: { [weak self] (result) in
+      switch result {
+      case .scanResult(let peripheral, let data, let rsii):
+        if let _ = self?.handle(uuid: peripheral.id,
+                                name: peripheral.name,
+                                data: data,
+                                rssi: rsii) {
+          return .add
+        }
+        return .skip
+      }
+    }, strategy: BluetoothStrategy())
 ```
 
 Scan for peripherals continuously.
